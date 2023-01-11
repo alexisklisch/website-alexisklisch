@@ -1,81 +1,45 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { Icon } from 'astro-icon'
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro'
+import Button from '../components/smalls/Button.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
+<Layout >
+	<Header/>
+	<section class="mx-auto px-7 flex flex-col items-center">
+		<img src="/imgs/hero.png" alt="Alexis, desarrollador Frontend y Backend saliendo de un círculo amarillo.">
+		<ul class="text-center text-2xl leading-9 mt-8">
+			<li>
+				<h3>Full Stack <strong class="text-sixYellow">Developer</strong></h3>
+			</li>
+			<li>
+				<h3>Diseñador <strong class="text-sixYellow">Gráfico</strong></h3>
+			</li>
 		</ul>
-	</main>
-</Layout>
+			<Icon class="w-12 animate-bounce mt-9 text-sixYellow-400" name="ic:round-keyboard-arrow-down"/>
+	</section>
+	<!-- About Me -->
+	<section class="mx-auto px-7 py-10 flex flex-col items-center">
+		<div class="grid grid-cols-[60%_40%] place-items-center">
+			<video
+				class="[mask:url('/graphs/k-logo.svg')] [mask-repeat:no-repeat] [mask-size:contain]"
+				autoplay muted loop poster="/graphs/k-logo.svg" src="/vid/video.webm">
+			</video>
+			<h4 class="text-4xl font-bold text-sixGreen">¡Hola!</h4>
+		</div>
+		<div class="text-sm text-center mt-12 grid gap-3">
+			<p><strong>Full Stack Developer</strong> con experiencia en React, Node, Express y Postgres. También habilidades en HTML, CSS, Sass, Javascript, MySQL, GIT y Github.</p>
+			<p>Mi objetivo es crear productos con tecnología moderna que ayuden a <strong>ahorrar tiempo</strong> y mejorar la <strong>eficiencia</strong> de las empresas.</p>
+			<p>A continuación verás algo de mi experiencia.</p>
+		</div>
+		<Button className="mt-6 mx-auto">
+			<strong>Descarga</strong> mi CV
+		</Button>
+	</section>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+	<!-- Experiencia -->
+	<section class="min-h-screen bg-sixDark">
+
+	</section>
+</Layout>

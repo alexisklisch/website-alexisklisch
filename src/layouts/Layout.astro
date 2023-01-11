@@ -1,35 +1,43 @@
 ---
 export interface Props {
-	title: string;
+	title?: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props 
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#F8B133">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="icon" type="image/svg+xml" href="/graphs/logo-alexis-klisch.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{title || "Alexis Klisch • Developer"}</title>
+    <meta name="description" content="Aumentá tus ventas 📈 con las mejores soluciones en Tecnología para el 🏡 Real Estate.">
+    <meta property="og:title" content="Soluciones para el Real Estate"/>
+    <meta property="og:url" content="https://www.alexisklisch.com" />
+    <meta property="og:description" content="Aumentá tus ventas 📈 con las mejores soluciones en Tecnología para el 🏡 Real Estate.">
+    <meta property="og:image" content="https://www.alexisklisch.com/media/graphs/miniatura.png">
+    <link rel="canonical" href="https://alexisklisch.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7PH8KVBP36"></script>
+    <script is:raw>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7PH8KVBP36');
+    </script>
+
 	</head>
-	<body>
+	<body class="bg-sixLight min-h-screen text-sixDark">
 		<slot />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
