@@ -1,9 +1,10 @@
 ---
 export interface Props {
 	title?: string
+  noRobots?: boolean
 }
 
-const { title } = Astro.props 
+const { title, noRobots } = Astro.props 
 ---
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ const { title } = Astro.props
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="icon" type="image/svg+xml" href="/graphs/logo-alexis-klisch.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title || "Alexis Klisch • Developer"}</title>
+		<title>{"Alexis Klisch • " + title || "Developer"}</title>
     <meta name="description" content="Aumentá tus ventas 📈 con las mejores soluciones en Tecnología para el 🏡 Real Estate.">
     <meta property="og:title" content="Soluciones para el Real Estate"/>
     <meta property="og:url" content="https://www.alexisklisch.com" />
@@ -25,7 +26,7 @@ const { title } = Astro.props
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
-
+    {noRobots && <meta name="robots"  content="noindex,follow" />}
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7PH8KVBP36"></script>

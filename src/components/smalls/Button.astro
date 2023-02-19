@@ -1,12 +1,25 @@
 ---
 interface Props {
-  className?: string
+  className?: string;
+  as: "a" | "btn";
+  href: string
 }
 
-const { className, text } = Astro.props
+const { className, as, href } = Astro.props;
 ---
-<button
-  class={`bg-sixDark text-sixLight p-4 px-6 rounded-md text-xs tracking-wider cursor-pointer max-w-xs select-none shadow-sixDark/50 shadow-md ${className}`}
-  >
-  <slot/>
-</button>
+
+{
+  as === "btn" ? (
+    <button
+      class={`bg-sixDark text-sixLight p-4 px-6 rounded-md text-xs tracking-wider cursor-pointer max-w-xs select-none shadow-sixDark/50 shadow-md ${className}`}
+    >
+      <slot />
+    </button>
+  ) : (
+    <a href="/assets/CV.pdf" target="_blank"
+      class={`bg-sixDark text-sixLight p-4 px-6 rounded-md text-xs tracking-wider cursor-pointer max-w-xs select-none shadow-sixDark/50 shadow-md ${className}`}
+    >
+      <slot />
+    </a>
+  )
+}

@@ -1,0 +1,50 @@
+---
+import TechsFooter from './TechsFooter.astro'
+interface Props {
+  company: string
+  experience: string[]
+  img: string
+  imgAlt: string
+  job: string
+  period: string
+  techs: string[]
+}
+
+const { company, experience, img, imgAlt, job, period, techs } = Astro.props
+---
+
+<article class="bg-sixLight p-2 py-4 rounded-md text-sixDark">
+  <div class="flex items-center border-b-2 border-b-sixLight-100 pb-3">
+    <figure class="w-12 mr-2">
+      <img
+        class="object-contain"
+        src={img}
+        alt={imgAlt}
+      />
+    </figure>
+    <div class="w-full">
+      <h3 class="whitespace-nowrap leading-4">
+        {company}<br />
+        <span class="text-xs font-bold text-sixDark-300">
+          {job}
+        </span>
+      </h3>
+      <h4 class="text-xs text-sixDark-300">{period}</h4>
+    </div>
+  </div>
+  <!-- Cuerpo del article -->
+  <div class="mt-3">
+    <ul
+      class="text-sm text-sixDark-300 list-disc list-inside px-2 flex flex-col gap-3 marker:text-sixDark"
+    >
+      {
+        experience.map((text) => (
+          <li>
+            <span class="-ml-2">{text}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <TechsFooter techs={techs}/>
+</article>

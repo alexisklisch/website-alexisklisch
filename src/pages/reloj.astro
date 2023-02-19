@@ -1,0 +1,72 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Reloj mundial">
+  <Header />
+  <main class="px-4 min-h-[50vh] max-w-4xl mx-auto">
+    <h1 class="text-lg font-bold tracking-wide pb-4 text-sixGreen">
+      Reloj mundial
+    </h1>
+    <section class="text-sixDark-300 text-center grid gap-6">
+      <article>
+        <p>El horario en <strong class="text-sixDark">Argentina</strong> es</p>
+        <h3 id="horario-pais-1" class="font-bold text-4xl text-sixYellow mt-3">
+          14:00
+        </h3>
+      </article>
+      <article>
+        <p>
+          El horario en <select
+            id="country-selector"
+            class="cursor-pointer font-bold text-sixDark border border-sixYellow-400 rounded-md appearance-none px-2"
+          >
+            <option selected>🇵🇹 Portugal</option>
+            <option>🇫🇷 Francia</option>
+            <option>🇪🇸 España</option>
+          </select>
+          es
+        </p>
+        <h3 id="horario-pais-2" class="font-bold text-4xl text-sixYellow mt-3">
+          19:00
+        </h3>
+      </article>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+<script>
+  const $horarioPais1:(HTMLHeadingElement | null) = document.querySelector("#horario-pais-1");
+  const $horarioPais2:(HTMLHeadingElement | null) = document.querySelector("#horario-pais-2");
+  const $countrySelector:(HTMLElement | null) = document.querySelector("#country-selector");
+
+  const countriesConfig = {
+    pt: { timeZone: "Europe/Lisbon", hour: "2-digit", minute: "2-digit" },
+    fr: { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" },
+    spa: { timeZone: "Europe/Madrid", hour: "2-digit", minute: "2-digit" },
+  };
+
+  $countrySelector?.addEventListener("change", (e: (Event)) => {
+    const optionSelected = e.target.value;
+    if (optionSelected === "🇵🇹 Portugal") cambiarHorario(countriesConfig.pt);
+    if (optionSelected === "🇫🇷 Francia") cambiarHorario(countriesConfig.fr);
+    if (optionSelected === "🇪🇸 España") cambiarHorario(countriesConfig.spa);
+  });
+
+  export function cambiarHorario(config = countriesConfig.pt) {
+    const now = new Date();
+    const horarioArgentina = now.toLocaleTimeString("es-AR", {
+      timeZone: "America/Argentina/Buenos_Aires",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    const horarioPortugal = now.toLocaleTimeString("es-AR", config);
+
+    $horarioPais1!.textContent = horarioArgentina;
+    $horarioPais2!.textContent = horarioPortugal;
+  }
+
+  cambiarHorario();
+</script>

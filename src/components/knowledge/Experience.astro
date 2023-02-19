@@ -1,0 +1,51 @@
+---
+import WorkExperienceCard from '../smalls/WorkExperienceCard.astro'
+---
+<section class="px-7 py-4 z-0 md:max-w-3xl md:mx-auto md:w-full">
+  <h2 class="text-lg font-bold tracking-wide pb-4">Experiencia</h2>
+  <!-- Work Experience container -->
+  <div class="grid gap-6 md:grid-cols-2">
+    <WorkExperienceCard
+      company="Goodinmo"
+      job="Full Stack Developer"
+      img="https://media.licdn.com/dms/image/C4D0BAQHfIm73CiwEhg/company-logo_200_200/0/1669056746798?e=1681344000&v=beta&t=fvpFeLiq7D0yEDnwD2rg0s_ZNe8w3AhNaJ2KUonPayw"
+      imgAlt="Logo de Goodinmo. Servicios para el rubro inmobiliario."
+      period="Diciembre 2021 - Actualmente"
+      techs={[
+        "vscode-icons:file-type-reactjs",
+        "vscode-icons:file-type-node",
+        "vscode-icons:file-type-sequelize",
+        "logos:postgresql",
+        "vscode-icons:file-type-scss",
+        "vscode-icons:file-type-vite",
+        "logos:vercel-icon",
+      ]}
+      experience={[
+        "Desarrollé la nueva página web de Goodinmo utilizando React, mejorando significativamente la experiencia del usuario y aumentando el tráfico en un 25%.",
+        "Implementé herramientas de scraping para obtener datos de contactos, lo que resultó en un aumento del 30% en las conversiones.",
+        "Creé bots automatizados para agilizar los procesos de presupuestado, reduciendo los tiempos en un 40% y mejorando la eficiencia en un 50%.",
+        "Utilice Node y Playwright para crear el scraping, y Node y Telegram para generar bots.",
+        "Experiencia con estilos SCSS, desarrollando proyectos de Frontend en React para aumentar su rendimiento y mejorar el diseño."
+      ]}
+    />
+    <WorkExperienceCard
+      company="Freelance"
+      job="Frontend Developer"
+      img="/graphs/logo-alexis-klisch.svg"
+      imgAlt="Logo de Alexis Klisch. Full Stack Developer."
+      period="2017 - Actualmente"
+      techs={[
+        "logos:html-5",
+        "logos:css-3",
+        "logos:javascript",
+        "logos:woocommerce-icon",
+        "vscode-icons:file-type-excel",
+      ]}
+      experience={[
+        "Diseñé y desarrollé más de 15 sitios web en HTML, CSS y JavaScript para clientes de diversos sectores, logrando un aumento del tráfico en un promedio del 40%.",
+        "Creé tiendas en línea con Woocommerce, generando un aumento en las ventas en un promedio del 30% para mis clientes.",
+        "Desarrollé soluciones personalizadas para automatizar procesos de negocio utilizando hojas de cálculo, logrando un aumento del 20% en la eficiencia de los procesos para mis clientes."
+      ]}
+    />
+  </div>
+</section>

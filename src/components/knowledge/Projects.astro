@@ -1,0 +1,31 @@
+---
+import ProjectCard from '../smalls/ProjectCard.astro'
+---
+<section class="px-7 py-4 z-0">
+  <h2 class="text-lg font-bold tracking-wide pb-4">Proyectos</h2>
+  <!-- Work Experience container -->
+  <div class="grid gap-6">
+    <ProjectCard
+      project="do-it-well"
+      company="Goodinmo"
+      job="Full Stack Developer"
+      period="Diciembre 2021 - Actualmente"
+      techs={[
+        "vscode-icons:file-type-reactjs",
+        "vscode-icons:file-type-node",
+        "vscode-icons:file-type-sequelize",
+        "logos:postgresql",
+        "vscode-icons:file-type-scss",
+        "vscode-icons:file-type-vite",
+        "logos:vercel-icon",
+      ]}
+      experience={[
+        "Desarrollé la nueva página web de Goodinmo utilizando React, mejorando significativamente la experiencia del usuario y aumentando el tráfico en un 25%.",
+        "Implementé herramientas de scraping para obtener datos de contactos, lo que resultó en un aumento del 30% en las conversiones.",
+        "Creé bots automatizados para agilizar los procesos de presupuestado, reduciendo los tiempos en un 40% y mejorando la eficiencia en un 50%.",
+        "Utilice Node y Playwright para crear el scraping, y Node y Telegram para generar bots.",
+        "Experiencia con estilos SCSS, desarrollando proyectos de Frontend en React para aumentar su rendimiento y mejorar el diseño."
+      ]}
+    />
+  </div>
+</section>

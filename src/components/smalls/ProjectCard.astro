@@ -1,0 +1,43 @@
+---
+import TechsFooter from './TechsFooter.astro'
+interface Props {
+  company: string
+  experience: string[]
+  job: string
+  period: string
+  techs: string[]
+  project: string
+}
+const { company, experience, job, period, project, techs } = Astro.props
+
+const urlToFetch = `https://api.github.com/repos/alexisklisch/${project}`
+const res = await fetch(urlToFetch)
+const data = await res.json()
+const {description, url, homepage} = data
+const title = project.split('-')
+  .map(word => word.replace(word[0], word[0].toUpperCase()))
+  .join(' ')
+
+---
+
+<article class="bg-sixLight p-2 py-4 rounded-md text-sixDark">
+  <div class="border-b-2 border-b-sixLight-100 pb-3">
+    <figure class="w-12 mr-2">
+      <img
+        class="object-contain"
+
+      />
+    </figure>
+    <div class="w-full text-center">
+      <h3 class="whitespace-nowrap leading-6">
+        {title}<br />
+      </h3>
+      <h4 class="text-xs text-sixDark-300">{description}</h4>
+    </div>
+  </div>
+  <!-- Cuerpo del article -->
+  <div class="mt-3">
+    <p>{description}</p>
+  </div>
+  <TechsFooter techs={techs}/>
+</article>
