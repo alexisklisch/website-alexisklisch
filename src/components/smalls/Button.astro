@@ -11,13 +11,13 @@ const { className, as, href } = Astro.props;
 {
   as === "btn" ? (
     <button
-      class={`bg-sixDark text-sixLight p-4 px-6 rounded-md text-xs tracking-wider cursor-pointer max-w-xs select-none shadow-sixDark/50 shadow-md ${className}`}
+      class={`bg-brand-dark text-brand-light p-4 px-6 rounded-md text-xs tracking-wider cursor-pointer max-w-xs select-none shadow-brand-dark/50 shadow-md ${className}`}
     >
       <slot />
     </button>
   ) : (
     <a href="/assets/CV.pdf" target="_blank"
-      class={`bg-sixDark text-sixLight p-4 px-6 rounded-md text-xs tracking-wider cursor-pointer max-w-xs select-none shadow-sixDark/50 shadow-md ${className}`}
+      class={`bg-brand-dark text-brand-light p-4 px-6 rounded-md text-xs tracking-wider cursor-pointer max-w-xs select-none shadow-brand-dark/50 shadow-md ${className}`}
     >
       <slot />
     </a>

@@ -1,13 +1,61 @@
 ---
-import LogoAlexisKlisch from "./smalls/LogoAlexisKlisch.astro";
-
+import LogoAlexisKlisch from "./smalls/LogoAlexisKlisch.astro"
+import Menu from "./smalls/Menu.astro"
 ---
 
-<header class="md:max-w-5xl xl:px-0 mx-auto py-9 px-7 flex justify-between items-center">
-	<LogoAlexisKlisch/>
-	<button type="button" class="flex flex-col gap-[3px]">
-		<div class="bg-sixDark h-1 w-7"/>
-		<div class="bg-sixDark h-1 w-7"/>
-		<div class="bg-sixDark h-1 w-7"/>
-	</button>
+<header
+  class="fixed left-[3%] w-[94%] max-w-5xl lg:left-[calc(50%_-_512px)] mx-auto py-9 px-7 flex justify-between items-center"
+>
+  <LogoAlexisKlisch />
+  <button type="button" class="flex flex-col gap-[3px] z-20 focus-visible:outline-0">
+    <div class="bg-brand-dark h-1 w-7 transition-transform"></div>
+    <div class="bg-brand-dark h-1 w-7 transition-transform"></div>
+    <div class="bg-brand-dark h-1 w-7 transition-transform"></div>
+  </button>
+  <Menu />
 </header>
+
+<style lang="css" is:global>
+  .active {
+    opacity: 1;
+    right: 0;
+  }
+
+	.open-menu {
+		position: relative;
+		transition: 0.2s ease-in-out;
+	}
+  .open-menu:nth-child(1) {
+    transform: rotate(45deg);
+    top: 6px;
+  }
+  .open-menu:nth-child(2) {
+    transform: rotate(-45deg);
+    top: -1px;
+  }
+  .open-menu:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 0;
+    opacity: 0;
+  }
+</style>
+
+<script>
+  const $burguerMenu = document.querySelector("button")
+  const $nav = document.querySelector("#menu")
+
+  $burguerMenu?.addEventListener("click", function () {
+    $nav?.classList.toggle("active")
+    $burguerMenu.querySelectorAll("div").forEach((div) => {
+      div.classList.toggle("open-menu")
+    })
+  })
+  $nav?.querySelectorAll(".menu__links__item a").forEach((item) => {
+    item.addEventListener("click", function () {
+      $nav.classList.remove("active")
+      $burguerMenu?.querySelectorAll("div").forEach((div) => {
+        div.classList.toggle("open-menu")
+      })
+    })
+  })
+</script>

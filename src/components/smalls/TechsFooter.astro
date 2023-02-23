@@ -6,10 +6,10 @@ interface Props {
 const { techs } = Astro.props
 ---
 
-<footer>
-  <h5 class="text-center text-sixDark-200 py-2 text-xs">Tecnologías</h5>
+<footer class="absolute bottom-0 left-auto w-full pb-4">
+  <h5 class="text-center text-brand-dark-200 py-2 text-xs">Tecnologías</h5>
   <ul class="flex justify-center px-3 gap-3 flex-wrap">
-    {techs.map(tech => <li class="self-center"><Icon class="w-8" name={tech} /></li>)}
+    {techs.map(tech => <li class="self-center"><Icon class="h-8 w-8" name={tech} /></li>)}
 
   </ul>
 </footer>

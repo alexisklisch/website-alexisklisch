@@ -7,13 +7,13 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Reloj mundial">
   <Header />
   <main class="px-4 min-h-[50vh] max-w-4xl mx-auto">
-    <h1 class="text-lg font-bold tracking-wide pb-4 text-sixGreen">
+    <h1 class="text-lg font-bold tracking-wide pb-4 text-brand-green">
       Reloj mundial
     </h1>
-    <section class="text-sixDark-300 text-center grid gap-6">
+    <section class="text-brand-dark-300 text-center grid gap-6">
       <article>
-        <p>El horario en <strong class="text-sixDark">Argentina</strong> es</p>
-        <h3 id="horario-pais-1" class="font-bold text-4xl text-sixYellow mt-3">
+        <p>El horario en <strong class="text-brand-dark">Argentina</strong> es</p>
+        <h3 id="horario-pais-1" class="font-bold text-4xl text-brand-yellow mt-3">
           14:00
         </h3>
       </article>
@@ -21,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
         <p>
           El horario en <select
             id="country-selector"
-            class="cursor-pointer font-bold text-sixDark border border-sixYellow-400 rounded-md appearance-none px-2"
+            class="cursor-pointer font-bold text-brand-dark border border-brand-yellow-400 rounded-md appearance-none px-2"
           >
             <option selected>🇵🇹 Portugal</option>
             <option>🇫🇷 Francia</option>
@@ -29,7 +29,7 @@ import Layout from "../layouts/Layout.astro";
           </select>
           es
         </p>
-        <h3 id="horario-pais-2" class="font-bold text-4xl text-sixYellow mt-3">
+        <h3 id="horario-pais-2" class="font-bold text-4xl text-brand-yellow mt-3">
           19:00
         </h3>
       </article>
@@ -49,7 +49,7 @@ import Layout from "../layouts/Layout.astro";
   };
 
   $countrySelector?.addEventListener("change", (e: (Event)) => {
-    const optionSelected = e.target.value;
+    const optionSelected = e.currentTarget!.value
     if (optionSelected === "🇵🇹 Portugal") cambiarHorario(countriesConfig.pt);
     if (optionSelected === "🇫🇷 Francia") cambiarHorario(countriesConfig.fr);
     if (optionSelected === "🇪🇸 España") cambiarHorario(countriesConfig.spa);
