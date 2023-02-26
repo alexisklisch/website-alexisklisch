@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon'
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
+import { New } from '../components/paraNoVolver/New.jsx'
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title='Noticias para no volver a Argentina'>
+  <Header/>
+  <main>
+  <figure class="pt-36 flex justify-center items-start gap-2">
+    <h1 class='font-bold text-2xl leading-4 text-brand-yellow text-center'>Noticias<br>
+      <span class='font-normal text-lg text-brand-dark-300'>para no volver</span>
+    </h1>
+    <Icon
+      class='text-brand-yellow max-w-[42px]'
+      name='ph:airplane-fill'
+    />
+  </figure>
+  <section class='mt-6'>
+    <New client:load/>
+  </section>
+  </main>
+  <Footer/>
+</Layout>
