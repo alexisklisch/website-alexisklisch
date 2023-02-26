@@ -28,6 +28,7 @@ import Layout from "../layouts/Layout.astro"
   $form!.addEventListener("submit", e => {
     e.preventDefault()
 
+    // @ts-ignore
     const formData = Object.fromEntries(new FormData(e.target))
     const body = JSON.stringify(formData)
     console.log(body)
