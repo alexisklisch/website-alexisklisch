@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon'
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
-import { New } from '../components/paraNoVolver/New.jsx'
+import { NewsContainer } from '../components/paraNoVolver/NewsContainer'
 import Layout from "../layouts/Layout.astro"
 ---
 
@@ -18,8 +18,8 @@ import Layout from "../layouts/Layout.astro"
       name='ph:airplane-fill'
     />
   </figure>
-  <section class='mt-6'>
-    <New client:load/>
+  <section class='mt-6 grid gap-6'>
+    <NewsContainer client:load/>
   </section>
   </main>
   <Footer/>

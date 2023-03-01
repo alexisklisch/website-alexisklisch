@@ -1,12 +1,58 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
 import Layout from "../layouts/Layout.astro"
-
 ---
 
 <Layout title="Llave de acceso" noRobots>
-  <Header/>
-  
-  <Footer/>
+  <Header />
+  <form class="max-w-xs mx-auto pt-32" id="form">
+    <label for="title"
+      >Título
+      <input name="title" type="text" />
+    </label>
+    <label for="body"
+      >Texto
+      <textarea name="body"></textarea>
+    </label>
+    <label for="link"
+      >Link
+      <input name="link" type="text" />
+    </label>
+    <label for="usersId"
+      >User ID
+      <input name="usersId" type="number" />
+    </label>
+    <input
+      class="px-5 py-2 shadow rounded-full bg-brand-dark-100"
+      type="submit"
+      value="Entregar"
+    />
+  </form>
+  <Footer />
 </Layout>
+<script>
+  const $form = document.querySelector("#form")
+
+  $form!.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    // @ts-ignore
+    const formData = Object.fromEntries(new FormData(e.target))
+    const body = JSON.stringify(formData)
+
+    fetch('https://localhost:3001/v1/news', {
+      method: 'POST',
+      body,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include"
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => {
+        window.location.href ='/login' 
+      })
+  })
+</script>

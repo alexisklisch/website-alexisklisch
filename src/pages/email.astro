@@ -1,0 +1,21 @@
+---
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro"
+
+---
+
+<Layout title='Enviar email'>
+  <Header />
+  <form class="grid pt-36 gap-6 mx-auto max-w-xs">
+    <label class="[width:min-content]" for="subject">Asunto
+      <input name="subject" type="text" placeholder="Hola">
+    </label>
+    <label for="email">Remitente
+      <input type="email" name="email" placeholder="tu-email@email.com" >
+    </label>
+    <label for="message">Mensaje
+      <textarea class="w-full" name="message" placeholder="Hola Alexis, me quiero comunicar con vos por..." />
+    </label>
+    <input type="button" value="Enviar">
+  </form>
+</Layout>

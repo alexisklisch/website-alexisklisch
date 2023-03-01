@@ -1,4 +1,5 @@
 ---
+import axios from 'axios'
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro"
@@ -23,24 +24,28 @@ import Layout from "../layouts/Layout.astro"
 <script>
   const $ = (selector: string) => document.querySelector(selector)
   const $form = $("#form")
-  const $testBtn = $("#test")
 
   $form!.addEventListener("submit", e => {
     e.preventDefault()
 
+    // @ts-ignore
     const formData = Object.fromEntries(new FormData(e.target))
-    const body = JSON.stringify(formData)
-    console.log(body)
+    const errorMsg = document.createElement('p')
 
-    fetch("http://localhost:3001/v1/auth/login", {
+    fetch('https://localhost:3001/v1/auth/login', {
       method: 'POST',
-      body,
+      body: JSON.stringify(formData),
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
+      credentials: "include"
     })
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(err => console.error('Ocurrió un error', err))
+      .then(res => {
+        if (res.ok) window.location.href = '/llave'
+      })
+      .catch(err => {
+        errorMsg.innerText = `Ocurrió un error: ${err}`
+        document.body.appendChild(errorMsg)
+      })
   })
 </script>
