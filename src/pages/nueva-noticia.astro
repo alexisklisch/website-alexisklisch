@@ -19,10 +19,6 @@ import Layout from "../layouts/Layout.astro"
       >Link
       <input name="link" type="text" />
     </label>
-    <label for="usersId"
-      >User ID
-      <input name="usersId" type="number" />
-    </label>
     <input
       class="px-5 py-2 shadow rounded-full bg-brand-dark-100"
       type="submit"
@@ -32,6 +28,9 @@ import Layout from "../layouts/Layout.astro"
   <Footer />
 </Layout>
 <script>
+  import { apiEnvs } from "../utils/apiEnvs";
+  import { ENVIRONMENT } from "../utils/consts";
+  const apiUrl = apiEnvs(ENVIRONMENT)
   const $form = document.querySelector("#form")
 
   $form!.addEventListener("submit", (e) => {
@@ -41,7 +40,7 @@ import Layout from "../layouts/Layout.astro"
     const formData = Object.fromEntries(new FormData(e.target))
     const body = JSON.stringify(formData)
 
-    fetch('https://localhost:3001/v1/news', {
+    fetch(`${apiUrl}/v1/news`, {
       method: 'POST',
       body,
       headers: {
