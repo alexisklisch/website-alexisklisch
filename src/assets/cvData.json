@@ -1,0 +1,120 @@
+{
+  "works":{
+    "en": "Experience",
+    "es": "Experiencia",
+    "list": [
+      {
+        "job": "Full Stack Developer",
+        "bussiness": "Goodinmo",
+        "date": {
+          "es": "Dic. 2021 - Actualmente",
+          "en": "Dec. 2021 - Currently"
+        },
+        "tasks": {
+          "es": [
+            "Hice el sitio web con HTML, CSS y JavaScript. El mismo tiene un acceso dinámico a WhatsApp que depende del tipo de servicio que deseen contratar. Ésto elevó las consultas de potenciales clientes un 150%.",
+            "Actualmente lidero la renovación del sitio web usando React.js como tecnología Frontend.",
+            "Lideré la creación de un bot para Telegram que agilizó los procesos de presupuestado en +70%. Para dicha tarea, usé Node en el servidor."
+          ],
+          "en": [
+            "I created the website using HTML, CSS, and JavaScript. It has dynamic access to WhatsApp depending on the type of service customers want to hire. This increased potential client inquiries by 150%.",
+            "Currently, I am leading the website renovation using React.js as the frontend technology.",
+            "I led the creation of a Telegram bot that streamlined the budgeting process by over 70%. For this task, I used Node on the server."
+          ]
+        }
+      },
+      {
+        "job": "Frontend Developer",
+        "bussiness": "Freelance",
+        "date": {
+          "es": "Abr. 2017 - Actualmente",
+          "en": "Apr. 2017 - Currently"
+        },
+        "tasks": {
+          "es": [
+            "Creación de sitios web estáticos para posicionar la marca personal de distintos agentes inmobiliarios.",
+            "Desarrollo de programa para convertir imágenes a PDF y subirlo a la nube para reducir el proceso en un -50%."
+          ],
+          "en": [
+            "Creation of static websites to position the personal brand of different real estate agents.",
+            "Development of a program to convert images to PDF and upload it to the cloud to reduce the process by -50%."
+          ]
+        }
+      }
+    ]
+  },
+  "projects": {
+    "en": "Projects",
+    "es": "Proyectos",
+    "list": [
+      {
+        "name": "Goodinmo",
+        "link": "goodinmo.com",
+        "description": {
+          "es": "Plataforma web de Goodinmo, una empresa que presta servicios al rubro inmobiliario. Buscamos la excelencia y ahorrar tiempo valioso.",
+          "en": "Goodinmo's web platform, a company that provides services to the real estate industry. We aim for excellence and to save valuable time."
+        },
+        "tech": ["NextJS", "Tailwind", "Node", "Authentication", "REST API", "CI/CD"]
+      },
+      {
+        "name": "Pillwise",
+        "link": "pillwise.vercel.app",
+        "description": {
+          "es": "Con IA, e inspirado por una situación personal, desarrollé una app que ayuda a las personas a saber si sus medicamentos son compatibles.",
+          "en": "With AI, and inspired by a personal situation, I developed an app that helps people find out if their medications are compatible."
+        },
+        "tech": ["React", "REST API", "Open AI", "Node", "Express", "Sequelize", "Vite"]
+      },
+      {
+        "name": "Mr. GIF",
+        "link": "mr-gif.vercel.app",
+        "description": {
+          "es": "Una aplicación web para encontrar todos los GIFs que te imagines con el motor de GIPHY.",
+          "en": "A web application to find all the GIFs you can imagine using the GIPHY engine."
+        },
+        "tech": ["React", "Hooks", "REST API", "Giphy", "SCSS"]
+      }
+    ]
+  },
+  "skills": {
+    "en": "Skills",
+    "es": "Habilidades",
+    "list": [
+      {
+        "type": {
+          "es": "Lenguajes",
+          "en": "Languages"
+        },
+        "list": ["JavaScript", "TypeScript", "Python"]
+      },
+      {
+        "type": {
+          "es": "Frontend",
+          "en": "Frontend"
+        },
+        "list": ["React", "Preact", "Astro", "HTML", "CSS", "Sass"]
+      },
+      {
+        "type": {
+          "es": "Backend",
+          "en": "Backend"
+        },
+        "list": ["Node JS", "REST API", "Express", "Sequelize"]
+      },
+      {
+        "type": {
+          "es": "Base de datos",
+          "en": "Databases"
+        },
+        "list": ["Postgres", "MySQL", "MongoDB"]
+      },
+      {
+        "type": {
+          "es": "Otros",
+          "en": "Others"
+        },
+        "list": ["English (A2)", "Docker", "GIT", "Github", "Accessibility"]
+      }
+    ]
+  }
+}

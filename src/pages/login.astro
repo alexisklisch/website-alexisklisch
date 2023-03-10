@@ -1,38 +1,43 @@
 ---
-import axios from 'axios'
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import Layout from "../layouts/Layout.astro"
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="Login">
+<Layout title='Login'>
   <Header />
-  <form class="pt-36 max-w-2xl mx-auto grid gap-6 justify-items-center" id="form">
-    <label for="email"
+  <form class='pt-36 flex flex-col max-w-lg mx-auto [&_input]:rounded-md [&_textarea]:rounded-md' id='form'>
+    <label class='grid px-3 py-1' for='email'
       >Email
-      <input name="email" type="email" />
+      <input class='grid px-3 py-1' name='email' type='email' />
     </label>
-    <label for="password"
+    <label class='grid px-3 py-1' for='password'
       >Password
-      <input name="password" type="password" />
+      <input class='grid px-3 py-1' name='password' type='password' />
     </label>
-    <button class="p-3 px-5 border border-brand-yellow rounded-full">Loguearse</button>
+    <div class='mx-auto mt-3'>
+      <input
+        class='px-3 py-1 bg-brand-dark text-brand-light'
+        type='submit'
+        value='Ingresar'
+      />
+    </div>
   </form>
   <div class='mt-6 mx-auto max-w-2xl text-center'> 
     <p>¿No tenés una cuenta en mi super página?</p>
-    <a class="font-bold text-brand-yellow" href="/signup">Crear cuenta</a>
+    <a class='font-bold text-brand-yellow' href='/signup'>Crear cuenta</a>
   </div>
   <Footer />
 </Layout>
 
 <script>
-  import { apiEnvs } from "../utils/apiEnvs";
-  import { ENVIRONMENT } from "../utils/consts";
+  import { apiEnvs } from '../utils/apiEnvs';
+  import { ENVIRONMENT } from '../utils/consts';
   const apiUrl = apiEnvs(ENVIRONMENT)
   const $ = (selector: string) => document.querySelector(selector)
-  const $form = $("#form")
+  const $form = $('#form')
 
-  $form!.addEventListener("submit", e => {
+  $form!.addEventListener('submit', e => {
     e.preventDefault()
 
     // @ts-ignore
@@ -43,9 +48,9 @@ import Layout from "../layouts/Layout.astro"
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
-      credentials: "include"
+      credentials: 'include'
     })
       .then(res => {
         if (res.ok) window.location.href = '/paranovolver'

@@ -18,6 +18,9 @@ import Layout from "../layouts/Layout.astro"
       name='ph:airplane-fill'
     />
   </figure>
+  <div class="flex justify-center">
+    <a class="border border-brand-dark-200 px-2 rounded-md my-4 font-bold text-brand-dark hover:border-transparent hover:bg-brand-dark hover:text-brand-light-100 transition-colors" href="/nueva-noticia">Crea tu noticia</a>
+  </div>
   <section class='max-w-6xl mt-6 grid gap-6 gap-y-12 mx-auto place-items-center grid-cols-[repeat(auto-fill,minmax(300px,1fr))]'>
     <NewsContainer client:load/>
   </section>

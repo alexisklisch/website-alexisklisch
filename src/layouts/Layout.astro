@@ -2,9 +2,10 @@
 export interface Props {
 	title?: string
   noRobots?: boolean
+  className?: string
 }
 
-const { title, noRobots } = Astro.props 
+const { title, noRobots, className } = Astro.props 
 ---
 
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ const { title, noRobots } = Astro.props
     </script>
 
 	</head>
-	<body class="realtive bg-brand-light min-h-screen text-brand-dark">
+	<body class={`realtive bg-brand-light min-h-screen text-brand-dark ${className && className}`}>
 		<slot />
 	</body>
 </html>

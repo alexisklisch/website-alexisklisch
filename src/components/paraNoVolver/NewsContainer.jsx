@@ -17,7 +17,10 @@ export const NewsContainer = () => {
     })
       .then(res => res.json())
       .then(data => setNews(data))
-      .catch(() => window.location.href = '/login')
+      .catch(err => {
+        console.log(err)
+        window.location.href = '/login'
+      })
   }, [])
   return <>
     { news.reverse().map(item => <New

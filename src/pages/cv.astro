@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import { CvCreator } from '../components/cv/CvCreator'
+import Header from '../components/Header.astro';
+
+---
+
+<Layout title='CV'>
+  <Header className='print:hidden' />
+  <CvCreator client:load/>
+</Layout>
